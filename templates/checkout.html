@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+</head>
+<body>
+    <h1>Checkout</h1>
+    <form action="{{ url_for('checkout') }}" method="post">
+        <label for="shipping_info">Shipping Information:</label>
+        <input type="text" id="shipping_info" name="shipping_info" required>
+        <label for="payment_info">Payment Information:</label>
+        <input type="text" id="payment_info" name="payment_info" required>
+        <input type="submit" value="Complete Purchase">
+    </form>
+</body>
+</html>
