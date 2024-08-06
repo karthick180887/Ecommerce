@@ -59,12 +59,9 @@ def add_to_cart(product_id):
 @app.route('/cart')
 def cart():
     cart_items = session.get('cart', [])
-    print(f"Cart items: {cart_items}")  # Debugging line
     try:
         total_price = sum(float(item['price']) for item in cart_items)  # Calculate total price as a float
-        print(f"Total price: {total_price}")  # Debugging line
     except Exception as e:
-        print(f"Error calculating total price: {e}")  # Debugging line
         total_price = 0.0
     return render_template('cart.html', cart=cart_items, total=total_price)
 
